@@ -1,0 +1,59 @@
+<html>
+  <title>Login and Registration</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech" rel="stylesheet">
+<body>
+<nav style="background-color:orange;" class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <h2>Login and Registration</h2>
+    </div>
+  </div>
+</nav>
+
+<div class="row">
+
+<div class="col-md-3"></div>
+<div class="col-md-3 thumbnail text-center">
+<h2>Login</h2>
+
+<form action="/login" method="POST">
+
+<br><br>
+<input type="text" id="email" name="email" placeholder="email">
+<br><br>
+<input type="password" id="password" name="password" placeholder="password">
+<br><br>
+<input type="submit" name="submit" value="submit my quote">
+<br><br>
+</form>
+<br><br>
+<h2>Registration</h2>
+
+<form action="/users" method="POST">
+
+<input type="text" id="name" name="name" placeholder="name">
+<br><br>
+<input type="text" id="email" name="email" placeholder="email">
+<br><br>
+<input type="password" id="password" name="password" placeholder="password">
+<br><br>
+<input type="submit" name="submit" value="submit my quote">
+<br><br>
+</form>
+</div>
+<div class="col-md-3 text-center">
+<table class="table table-striped">
+<tr><th>name</th><th>email</th><tr>
+<% for (let i of users) { %>
+  <tr><td><%= i.name %></td><td><%= i.email %></td></tr>
+<% } %>
+</table>
+</div>
+<div class="col-md-3"></div>
+</div>
+
+</body>
+</html>
